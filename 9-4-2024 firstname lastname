@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main()
+{
+    printf("first name:");
+    char firstname[6];
+    scanf("%5s", firstname);
+    printf("last name:");
+    char lastname[10];
+    scanf("%9s", lastname);
+    printf("Your name is:%s %s", firstname, lastname);
+    return 0;
+}
