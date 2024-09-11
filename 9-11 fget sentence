@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char sentence[100]; 
+    char copiedString[11]; 
+    
+    printf("Enter a sentence: ");
+    if (fgets(sentence, sizeof(sentence), stdin) == NULL) {
+        printf("Error reading input.\n");
+        return 1;
+    }
+    
+    if ((strlen(sentence) > 0) && (sentence[strlen(sentence) - 1] == '\n')) {
+        sentence[strlen(sentence) - 1] = '\0';
+    }
+    
+    if (strlen(sentence) > 10) {
+        strncpy(copiedString, sentence, 10);
+        copiedString[10] = '\0'; 
+    } else {
+        strcpy(copiedString, sentence);
+    }
+    
+    printf("Copied sentence: %s\n", copiedString);
+    
+    return 0;
+}
